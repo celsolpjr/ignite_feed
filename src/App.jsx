@@ -1,9 +1,9 @@
 import { Header } from "./components/Header";
-import { Post } from "./Post";
+import { Sidebar } from "./components/Sidebar";
+import { Post } from "./components/Post";
 
 import './global.css';
 import styles from './App.module.css';
-import { Sidebar } from "./components/Sidebar";
 
 export function App() {
   return (
@@ -16,10 +16,6 @@ export function App() {
           <Post 
             author = "Celso Lopes" 
             content="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magnam sint eos, quas magni possimus necessitatibus? Nihil rerum ad exercitationem, esse saepe ipsum soluta ducimus deleniti quaerat totam ratione recusandae culpa." 
-          />
-          <Post 
-            author="Junior"
-            content="Novo post"
           />
         </main>
       </div>
