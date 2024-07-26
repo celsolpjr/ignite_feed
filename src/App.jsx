@@ -5,6 +5,37 @@ import { Post } from "./components/Post";
 import './global.css';
 import styles from './App.module.css';
 
+const posts = [
+  {
+    id: 1,
+    author: {
+      avatarUrl: 'https://github.com/celsolpjr.png',
+      name: 'Celso Lopes Junior',
+      role: 'Web developer'
+    },
+    content: [
+      { type: 'paragraph', content: 'Fala galeraa 👋' },
+      { type: 'paragraph', content:  'Acabei de subir mais um projeto no meu portifa. É um projeto que fiz no NLW Return, evento da Rocketseat. O nome do projeto é DoctorCare 🚀' },
+      { type: 'link', content: 'jane.design/doctorcare' },
+    ],
+    publishedAt: new Date('2024-06-26 12:31:00'),
+  },
+  {
+    id: 2,
+    author: {
+      avatarUrl: 'https://github.com/maykbrito.png',
+      name: 'Mayk Brito',
+      role: 'Web developer'
+    },
+    content: [
+      { type: 'paragraph', content: 'Fala galeraa 👋' },
+      { type: 'paragraph', content:  'Acabei de subir mais um projeto no meu portifa. É um projeto que fiz no NLW Return, evento da Rocketseat. O nome do projeto é DoctorCare 🚀' },
+      { type: 'link', content: 'jane.design/doctorcare' },
+    ],
+    publishedAt: new Date('2024-07-26 12:32:00'),
+  },
+]
+
 export function App() {
   return (
     <div>
@@ -13,10 +44,14 @@ export function App() {
       <div className={styles.wrapper}>
         <Sidebar />
         <main>
-          <Post 
-            author = "Celso Lopes" 
-            content="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magnam sint eos, quas magni possimus necessitatibus? Nihil rerum ad exercitationem, esse saepe ipsum soluta ducimus deleniti quaerat totam ratione recusandae culpa." 
-          />
+          {posts.map(post => {
+            return (<Post 
+                author={post.author}
+                content={post.content}
+                publishedAt={post.publishedAt}
+              />
+            )
+          })}
         </main>
       </div>
     </div>
